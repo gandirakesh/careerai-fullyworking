@@ -16,8 +16,9 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://careerai.vercel.app' // 👈 replace with your actual frontend URL later
+    'https://careerai-tawny.vercel.app'
   ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
 
