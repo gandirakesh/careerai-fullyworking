@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useToast } from '../../contexts/ToastContext';
 import { Eye, EyeOff, Loader2, ArrowRight } from 'lucide-react';
@@ -7,7 +7,6 @@ import { Eye, EyeOff, Loader2, ArrowRight } from 'lucide-react';
 export default function LoginPage() {
   const { login } = useAuth();
   const { toast } = useToast();
-  const navigate = useNavigate();
 
   const [form, setForm] = useState({ email: '', password: '' });
   const [showPw, setShowPw] = useState(false);
@@ -19,7 +18,6 @@ export default function LoginPage() {
     try {
       await login(form.email, form.password);
       toast('Welcome back!', 'success');
-      // Auth context will redirect via protected route logic after user is set
     } catch (err: any) {
       toast(err.response?.data?.message || 'Login failed', 'error');
     } finally {
@@ -30,6 +28,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen pt-24 pb-12 px-4 flex items-center justify-center">
       <div className="w-full max-w-md animate-in">
+
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-400 items-center justify-center mb-4 glow-blue">
@@ -41,6 +40,7 @@ export default function LoginPage() {
 
         <div className="card">
           <form onSubmit={handleSubmit} className="space-y-4">
+
             <div>
               <label className="block text-sm font-medium text-slate-400 mb-1.5">Email</label>
               <input
@@ -85,8 +85,10 @@ export default function LoginPage() {
                 <>Sign in <ArrowRight className="w-4 h-4" /></>
               )}
             </button>
+
           </form>
 
+          {/* Signup link */}
           <div className="mt-6 pt-6 border-t border-white/[0.06] text-center">
             <p className="text-slate-500 text-sm">
               Don't have an account?{' '}
@@ -95,14 +97,7 @@ export default function LoginPage() {
               </Link>
             </p>
           </div>
-        </div>
 
-        {/* Demo credentials */}
-        <div className="mt-4 p-4 rounded-xl border border-amber-500/20 bg-amber-500/5">
-          <p className="text-amber-400 text-xs font-mono text-center">
-            Demo: test@seeker.com / password123 (job seeker)<br />
-            Demo: test@recruiter.com / password123 (recruiter)
-          </p>
         </div>
       </div>
     </div>
