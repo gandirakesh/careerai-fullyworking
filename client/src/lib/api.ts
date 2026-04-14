@@ -1,13 +1,12 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api',
+  baseURL: import.meta.env.VITE_API_URL,
   headers: { 'Content-Type': 'application/json' },
 });
 
-// 🔥 ADD THIS (VERY IMPORTANT)
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('careerai_token');
+  const token = localStorage.getItem('careerai_token'); // ✅ FIXED
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
