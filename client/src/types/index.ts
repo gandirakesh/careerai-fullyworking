@@ -8,6 +8,18 @@ export interface User {
   createdAt: string;
 }
 
+export interface PortfolioProject {
+  _id?: string;
+  title: string;
+  description: string;
+  liveUrl?: string;
+  repoUrl?: string;
+  tags: string[];
+  featured: boolean;
+  image?: string;
+  year?: string;
+}
+
 export interface Profile {
   _id: string;
   userId: string;
@@ -22,6 +34,7 @@ export interface Profile {
   skills: string[];
   experience: Experience[];
   education: Education[];
+  portfolio: PortfolioProject[];
   resumeUrl?: string;
   companyName?: string;
   companySize?: string;

@@ -72,6 +72,9 @@ export default function Navbar() {
                 <Link to="/resume" className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/resume') ? 'bg-sky-500/10 text-sky-400' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}>
                   Resume
                 </Link>
+                <Link to="/portfolio" className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/portfolio') ? 'bg-sky-500/10 text-sky-400' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}>
+                  Portfolio
+                </Link>
               </>
             )}
             {user?.role === 'recruiter' && (
@@ -189,6 +192,9 @@ export default function Navbar() {
               </Link>
               <Link to="/resume" className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" onClick={() => setMenuOpen(false)}>
                 <FileText className="w-4 h-4" /> Resume
+              </Link>
+              <Link to="/portfolio" className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" onClick={() => setMenuOpen(false)}>
+                <FileText className="w-4 h-4" /> Portfolio
               </Link>
             </>
           )}

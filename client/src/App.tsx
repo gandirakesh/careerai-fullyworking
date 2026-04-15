@@ -14,6 +14,7 @@ import SeekerDashboard from './pages/seeker/Dashboard';
 import SeekerApplications from './pages/seeker/Applications';
 import SeekerProfile from './pages/seeker/Profile';
 import SeekerResume from './pages/seeker/Resume';
+import SeekerPortfolio from './pages/seeker/Portfolio';
 
 // Recruiter
 import RecruiterDashboard from './pages/recruiter/Dashboard';
@@ -59,6 +60,7 @@ function AppRoutes() {
         <Route path="/applications" element={<ProtectedRoute role="job_seeker"><SeekerApplications /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute role="job_seeker"><SeekerProfile /></ProtectedRoute>} />
         <Route path="/resume" element={<ProtectedRoute role="job_seeker"><SeekerResume /></ProtectedRoute>} />
+        <Route path="/portfolio" element={<ProtectedRoute role="job_seeker"><SeekerPortfolio /></ProtectedRoute>} />
 
         {/* Recruiter */}
         <Route path="/recruiter" element={<ProtectedRoute role="recruiter"><RecruiterDashboard /></ProtectedRoute>} />

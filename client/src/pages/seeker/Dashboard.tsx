@@ -66,7 +66,7 @@ export default function SeekerDashboard() {
       </div>
 
       {/* Resume quick access */}
-      <div className="glass rounded-2xl p-5 mb-8 border border-sky-500/10 bg-sky-500/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="glass rounded-2xl p-5 mb-4 border border-sky-500/10 bg-sky-500/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-sky-500/15 flex items-center justify-center flex-shrink-0">
             <FileText className="w-5 h-5 text-sky-400" />
@@ -78,6 +78,22 @@ export default function SeekerDashboard() {
         </div>
         <Link to="/resume" className="btn-primary text-sm py-2 flex items-center gap-2 flex-shrink-0">
           <Edit3 className="w-4 h-4" /> Open Resume
+        </Link>
+      </div>
+
+      {/* Portfolio quick access */}
+      <div className="glass rounded-2xl p-5 mb-8 border border-purple-500/10 bg-purple-500/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center flex-shrink-0">
+            <Zap className="w-5 h-5 text-purple-400" />
+          </div>
+          <div>
+            <p className="font-display font-semibold text-white">Portfolio</p>
+            <p className="text-slate-400 text-sm mt-0.5">Showcase your projects and let AI suggest ideas</p>
+          </div>
+        </div>
+        <Link to="/portfolio" className="btn-primary text-sm py-2 flex items-center gap-2 flex-shrink-0" style={{ background: 'linear-gradient(135deg, #a855f7, #7c3aed)' }}>
+          <Edit3 className="w-4 h-4" /> Open Portfolio
         </Link>
       </div>
 
